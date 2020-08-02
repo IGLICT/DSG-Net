@@ -11,6 +11,8 @@ This code has been tested on Ubuntu 18.04 with Cuda 10.0, GCC 5.5.0, Python 3.6.
 Please run
     
     pip3 install -r requirements.txt
+    unzip ../code/data/part_trees.zip -d ../code/data
+
 
 to install the other dependencies.
 
