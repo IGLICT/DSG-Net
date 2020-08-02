@@ -1,43 +1,28 @@
 # DSM-Net: Disentangled Structured Mesh Net for Controllable Generation of Fine Geometry
 
-![Overview](https://github.com/daerduoCarey/structurenet/blob/master/images/teaser.png)
-
-**Figure 1.** StructureNet is a hierarchical graph network that produces a unified latent space to encode structured models with both continuous geometric and discrete structural variations. In this example, we projected an un-annotated point cloud (left) and un-annotated image (right) into the learned latent space yielding semantically segmented point clouds structured as a hierarchy of graphs. The shape interpolation in the latent space also produces structured point clouds (top) including their corresponding graphs (bottom). Edges correspond to specific part relationships that are modeled by our approach. For simplicity, here we only show the graphs without the hierarchy. Note how the base of the chair morphs via functionally plausible intermediate configurations, or the chair back transitions from a plain back to a back with arm-rests.
+![Overview](./images/teaser3.png)
+**Figure 1.** Our deep generative network DSM-Net encodes 3D shapes with complex structure and fine geometry in a representation that leverages the synergy between geometry and structure, while disentangling these two aspects as much as possible. This enables novel modes of controllable generation for high-quality shapes. Left: results of disentangled interpolation. Here, the top left and bottom right chairs (highlighted with red rectangles) are the input shapes. The remaining chairs are generated automatically with our DSM-Net, where in each row, the `structure` of the shapes is interpolated while keeping the geometry unchanged, whereas in each column, the `geometry` is interpolated while retaining the structure. Right: shape generation results with complex structure and fine geometry details by our DSM-Net. We show close-up views in dashed yellow rectangles to highlight local details.
 
 ## Introduction
-We introduce a hierarchical graph network for learning structure-aware shape generation which (i) can directly encode shape parts represented as such n-ary graphs; (ii) can be robustly trained on large and complex shape families such as PartNet; and (iii) can be used to generate a great diversity of realistic structured shape geometries with both both continuous geometric and discrete structural variations.
+We introduce DSM-Net, a deep neural network that learns a disentangled structured mesh representation for 3D shapes, where two key aspects of shapes, geometry and structure, are encoded in a synergistic manner to ensure plausibility of the generated shapes, while also being disentangled as much as possible. This supports a range of novel shape generation applications with intuitive control, such as interpolation of structure (geometry) while keeping geometry (structure) unchanged. 
 
 
 ## About the paper
 
 Our team: 
-[Kaichun Mo](https://cs.stanford.edu/~kaichun),
-[Paul Guerrero](http://paulguerrero.net/),
-[Li Yi](https://cs.stanford.edu/~ericyi/),
-[Hao Su](http://cseweb.ucsd.edu/~haosu/),
-[Peter Wonka](http://peterwonka.net/),
-[Niloy Mitra](http://www0.cs.ucl.ac.uk/staff/n.mitra/),
-and [Leonidas J. Guibas](https://geometry.stanford.edu/member/guibas/) 
+[Jie Yang<sup>\*</sup>](http://people.geometrylearning.com/~jieyang/),
+[Kaichun Mo<sup>\*</sup>](https://cs.stanford.edu/~kaichun),
+[Yu-Kun Lai](http://users.cs.cf.ac.uk/Yukun.Lai/),
+[Leonidas J. Guibas](https://geometry.stanford.edu/member/guibas/)
+and [Lin Gao](http://geometrylearning.com/lin/)
 from 
-Stanford University, University College London (UCL), University of California San Diego (UCSD), King Abdullah University of Science and Technology (KAUST), Adobe Research and Facebook AI Research.
+Institute of Computing Technology, CAS and University of Chinese Academy of Sciences, Cardiff University, Stanford University.
 
-Arxiv Version: https://arxiv.org/abs/1908.00575
+<sup>\*</sup> equal contribution.
 
-Accepted by [Siggraph Asia 2019](https://sa2019.siggraph.org/). See you at Brisbane, Australia in November!
 
-Project Page: https://cs.stanford.edu/~kaichun/structurenet/
+Arxiv Version: Comming soon
 
-## Citations
-    @article{mo2019structurenet,
-          title={StructureNet: Hierarchical Graph Networks for 3D Shape Generation},
-          author={Mo, Kaichun and Guerrero, Paul and Yi, Li and Su, Hao and Wonka, Peter and Mitra, Niloy and Guibas, Leonidas},
-          journal={ACM Transactions on Graphics (TOG), Siggraph Asia 2019},
-          volume={38},
-          number={6},
-          pages={Article 242},
-          year={2019},
-          publisher={ACM}
-    }
 
 ## About this repository
 
@@ -53,7 +38,7 @@ This repository provides data and code as follows.
 
 ## Questions
 
-ulimit -n 65535
+<!-- ulimit -n 65535 -->
 
 Please post issues for questions and more helps on this Github repo page. We encourage using Github issues instead of sending us emails since your questions may benefit others.
 
@@ -61,7 +46,4 @@ Please post issues for questions and more helps on this Github repo page. We enc
 
 MIT Licence
 
-## Updates
-
-* [July 27, 2019] Data and Code released.
 
