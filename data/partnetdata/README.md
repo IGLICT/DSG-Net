@@ -1,4 +1,5 @@
 
+Please fill in [this form](https://forms.gle/vs1B6myBHUfebqGG8) to download the data.
 
 This zip file provides the processed PartNet hierarchy of graphs data for six object categories used in the paper: chair, storage furniture, table, lamp, synthetic data.
 
