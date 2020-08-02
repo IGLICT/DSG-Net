@@ -1,0 +1,48 @@
+newmtl m_chair
+Kd 0.286275 0.000000 0.000000
+Ka 0 0 0
+newmtl m_chair-chair_back
+Kd 0.945098 0.494118 0.000000
+Ka 0 0 0
+newmtl m_chair-chair_back-back_surface
+Kd 1.000000 0.898039 0.415686
+Ka 0 0 0
+newmtl m_chair-chair_back-back_surface-back_surface_vertical_bar
+Kd 0.596078 0.870588 0.494118
+Ka 0 0 0
+newmtl m_chair-chair_back-back_surface-back_surface_horizontal_bar
+Kd 1.000000 0.898039 0.415686
+Ka 0 0 0
+newmtl m_chair-chair_back-back_surface-back_single_surface
+Kd 1.000000 0.529412 0.603922
+Ka 0 0 0
+newmtl m_chair-chair_back-back_frame
+Kd 0.945098 0.494118 0.000000
+Ka 0 0 0
+newmtl m_chair-chair_back-back_frame-back_frame_vertical_bar
+Kd 0.937255 0.682353 0.000000
+Ka 0 0 0
+newmtl m_chair-chair_back-back_frame-back_frame_horizontal_bar
+Kd 1.000000 0.286275 0.219608
+Ka 0 0 0
+newmtl m_chair-chair_arm
+Kd 0.980392 0.000000 0.788235
+Ka 0 0 0
+newmtl m_chair-chair_arm-armrest
+Kd 0.725490 0.623529 1.000000
+Ka 0 0 0
+newmtl m_chair-chair_arm-armsupport
+Kd 0.980392 0.000000 0.788235
+Ka 0 0 0
+newmtl m_chair-chair_base
+Kd 0.000000 0.549020 0.000000
+Ka 0 0 0
+newmtl m_chair-chair_base-bar_stretcher
+Kd 0.000000 0.298039 0.000000
+Ka 0 0 0
+newmtl m_chair-chair_base-leg
+Kd 0.286275 0.000000 0.000000
+Ka 0 0 0
+newmtl m_chair-chair_seat
+Kd 0.000000 0.349020 1.000000
+Ka 0 0 0

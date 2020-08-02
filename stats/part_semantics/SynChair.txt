@@ -1,0 +1,16 @@
+1 chair subcomponents
+2 chair/chair_back subcomponents
+3 chair/chair_back/back_surface subcomponents
+4 chair/chair_back/back_surface/back_surface_vertical_bar leaf
+5 chair/chair_back/back_surface/back_surface_horizontal_bar leaf
+6 chair/chair_back/back_surface/back_single_surface leaf
+7 chair/chair_back/back_frame subcomponents
+8 chair/chair_back/back_frame/back_frame_vertical_bar leaf
+9 chair/chair_back/back_frame/back_frame_horizontal_bar leaf
+10 chair/chair_arm subcomponents
+11 chair/chair_arm/armrest leaf
+12 chair/chair_arm/armsupport leaf
+13 chair/chair_base subcomponents
+14 chair/chair_base/bar_stretcher leaf
+15 chair/chair_base/leg leaf
+16 chair/chair_seat leaf
