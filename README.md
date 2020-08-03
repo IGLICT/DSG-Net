@@ -16,7 +16,7 @@ Our team:
 [Leonidas J. Guibas](https://geometry.stanford.edu/member/guibas/)
 and [Lin Gao](http://geometrylearning.com/lin/)
 from 
-Institute of Computing Technology, CAS and University of Chinese Academy of Sciences, Cardiff University, Stanford University.
+Institute of Computing Technology, CAS and University of Chinese Academy of Sciences, Stanford University, Cardiff University.
 
 <sup>\*</sup> equal contribution.
 
