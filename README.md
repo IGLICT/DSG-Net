@@ -21,7 +21,9 @@ Institute of Computing Technology, CAS and University of Chinese Academy of Scie
 <sup>\*</sup> equal contribution.
 
 
-Arxiv Version: Comming soon
+Arxiv Version: https://arxiv.org/abs/2008.05440
+
+Project Page: http://geometrylearning.com/dsm-net/
 
 
 ## About this repository
