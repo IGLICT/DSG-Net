@@ -20,6 +20,7 @@ Institute of Computing Technology, CAS and University of Chinese Academy of Scie
 
 <sup>\*</sup> equal contribution.
 
+Provisional Accept with Major Revisions, ACM Transactions on Graphics 2021
 
 Arxiv Version: https://arxiv.org/abs/2008.05440
 
