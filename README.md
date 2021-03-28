@@ -1,4 +1,4 @@
-# DSM-Net: Disentangled Structured Mesh Net for Controllable Generation of Fine Geometry
+# DSG-Net: Learning Disentangled Structure and Geometry for 3D Shape Generation
 
 ![Overview](./images/teaser3.jpg)
 **Figure 1.** Our deep generative network DSM-Net encodes 3D shapes with complex structure and fine geometry in a representation that leverages the synergy between geometry and structure, while disentangling these two aspects as much as possible. This enables novel modes of controllable generation for high-quality shapes. Left: results of disentangled interpolation. Here, the top left and bottom right chairs (highlighted with red rectangles) are the input shapes. The remaining chairs are generated automatically with our DSM-Net, where in each row, the `structure` of the shapes is interpolated while keeping the geometry unchanged, whereas in each column, the `geometry` is interpolated while retaining the structure. Right: shape generation results with complex structure and fine geometry details by our DSM-Net. We show close-up views in dashed yellow rectangles to highlight local details.
@@ -23,7 +23,7 @@ Institute of Computing Technology, CAS and University of Chinese Academy of Scie
 
 Arxiv Version: https://arxiv.org/abs/2008.05440
 
-Project Page: http://geometrylearning.com/dsm-net/
+Project Page: http://geometrylearning.com/dsg-net/
 
 
 ## About this repository
