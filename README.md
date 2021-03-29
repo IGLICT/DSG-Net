@@ -39,6 +39,11 @@ This repository provides data and code as follows.
     stats/                  # contains helper statistics
 ```
 
+## News
+
+* The whole dataset is uploaded, you can find it from [here](https://github.com/IGLICT/DSG-Net/tree/master/data/partnetdata).
+
+
 ## Questions
 
 <!-- ulimit -n 65535 -->
