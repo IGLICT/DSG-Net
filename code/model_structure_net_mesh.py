@@ -423,7 +423,7 @@ class RecursiveDecoder(nn.Module):
         return (dist1.mean(dim=1) + dist2.mean(dim=1)) / 2
 
     def isLeafLossEstimator(self, is_leaf_logit, gt_is_leaf):
-        return self.bceLoss(is_leaf_logit, gt_is_leaf).view(-1)
+        return self.bceLoss(is_leaf_logit + eps, gt_is_leaf).view(-1)
 
     # decode a root code into a tree structure
     def decode_structure(self, z, max_depth):
