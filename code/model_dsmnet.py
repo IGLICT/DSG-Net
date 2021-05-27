@@ -412,7 +412,7 @@ class RecursiveDecoder(nn.Module):
         return loss
 
     def isLeafLossEstimator(self, is_leaf_logit, gt_is_leaf):
-        return self.bceLoss(is_leaf_logit, gt_is_leaf).view(-1)
+        return self.bceLoss(is_leaf_logit + torch.finfo(torch.float32).eps, gt_is_leaf).view(-1)
 
     def acap2coor(self, deformed_coor, center):
         num_point = deformed_coor.size(1)
