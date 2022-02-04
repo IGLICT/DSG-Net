@@ -20,6 +20,7 @@ Institute of Computing Technology, CAS and University of Chinese Academy of Scie
 
 <sup>\*</sup> equal contribution.
 
+**Provisional Accept with Major Revisions, ACM Transactions on Graphics 2021**
 
 Arxiv Version: https://arxiv.org/abs/2008.05440
 
@@ -37,6 +38,11 @@ This repository provides data and code as follows.
          # please follow `code/README.md` to run the code
     stats/                  # contains helper statistics
 ```
+
+## News
+
+* The whole dataset is uploaded, you can find it from [here](https://github.com/IGLICT/DSG-Net/tree/master/data/partnetdata).
+
 
 ## Questions
 
