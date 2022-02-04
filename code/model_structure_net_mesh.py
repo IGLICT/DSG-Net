@@ -19,7 +19,7 @@ import time, random
 from utils import linear_assignment, load_pts, transform_pc_batch, get_surface_reweighting_batch, qrot
 
 from feature2vertex import Feature2Vertex_pytorch
-from model_part_deform import PartDeformEncoder2, PartDeformDecoder2
+from model_part_deformv2 import PartDeformEncoder2, PartDeformDecoder2
 
 class Sampler(nn.Module):
 
@@ -68,12 +68,12 @@ class SymmetricChildEncoder(nn.Module):
         print(f'Using Symmetric Type: {symmetric_type}')
         self.symmetric_type = symmetric_type
 
-        self.child_op_part = nn.Linear(feature_size + Tree.part_num_sem, hidden_size)
+        self.child_op_part = nn.Linear(feature_size + Tree.num_sem, hidden_size)
         self.second_part = nn.Linear(hidden_size, feature_size)
 
         # skip connection
         self.second_norm = nn.GroupNorm(num_groups=min(32, feature_size//8), num_channels=feature_size)
-        self.skip_op_part = nn.Linear(feature_size + Tree.part_num_sem, feature_size)
+        self.skip_op_part = nn.Linear(feature_size + Tree.num_sem, feature_size)
 
     def forward(self, child_feats, child_exists):
         batch_size = child_feats.shape[0]
@@ -277,7 +277,7 @@ class ConcatChildDecoder(nn.Module):
 
         self.mlp_parent_part = nn.Linear(feature_size, hidden_size*self.max_part_num)
         self.mlp_exists_part = nn.Linear(hidden_size, 1)
-        self.mlp_part_sem = nn.Linear(hidden_size, Tree.part_num_sem)
+        self.mlp_part_sem = nn.Linear(hidden_size, Tree.num_sem)
         self.mlp_child_part = nn.Linear(hidden_size, feature_size)
         self.norm_child_part = nn.GroupNorm(num_groups=min(32, feature_size//8), num_channels=feature_size)
 
@@ -286,7 +286,7 @@ class ConcatChildDecoder(nn.Module):
         feat_size = parent_feature.shape[1]
 
         max_child_num = self.max_part_num
-        num_sem = self.Tree.part_num_sem
+        num_sem = self.Tree.num_sem
 
         parent_feature = F.leaky_relu(self.mlp_parent_part(parent_feature), 0.1)
         child_feats = parent_feature.view(batch_size, max_child_num, self.hidden_size)
@@ -423,7 +423,7 @@ class RecursiveDecoder(nn.Module):
         return (dist1.mean(dim=1) + dist2.mean(dim=1)) / 2
 
     def isLeafLossEstimator(self, is_leaf_logit, gt_is_leaf):
-        return self.bceLoss(is_leaf_logit, gt_is_leaf).view(-1)
+        return self.bceLoss(is_leaf_logit + torch.finfo(torch.float32).eps, gt_is_leaf).view(-1)
 
     # decode a root code into a tree structure
     def decode_structure(self, z, max_depth):

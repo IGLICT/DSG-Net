@@ -126,7 +126,7 @@ def draw_edge(ax, e, p_from, p_to, rot=None):
         linestyle=':',
         linewidth=edge_type_linewidth[e['type']])
 
-def output_obj(jsonfile, sem_colors_filename, mtl_file, Tree):
+def output_obj(jsonfile, sem_colors_filename, mtl_file, Tree, PartGraphShapesDataset):
     # Tree.load_category_info('Chair')
     orig_obj = PartGraphShapesDataset.load_object(jsonfile, Tree)
     filepath, fullflname = os.path.split(jsonfile)
@@ -140,15 +140,15 @@ def output_obj(jsonfile, sem_colors_filename, mtl_file, Tree):
     # for sem in sem_colors:
     #     sem_colors[sem] = (float(sem_colors[sem][0]) / 255.0, float(sem_colors[sem][1]) / 255.0, float(sem_colors[sem][2]) / 255.0)
     for jj in range(len(part_boxes)):
-
-        v = part_geos[jj].cpu().numpy().reshape(-1, 3)
-        f = Cube_f + jj * len(Cube_v)
-        for i in range(v.shape[0]):
-            obj_fid.write('v %f %f %f\n' % (v[i, 0], v[i, 1], v[i, 2]))
-        obj_fid.write('g part_%s\n' % part_sems[jj].replace('/', '-'))
-        obj_fid.write('usemtl m_%s\n' % part_sems[jj].replace('/', '-'))
-        for i in range(f.shape[0]):
-            obj_fid.write('f %d %d %d\n' % (f[i, 0], f[i, 1], f[i, 2]))
+        if part_geos[jj] is not None:
+            v = part_geos[jj].cpu().numpy().reshape(-1, 3)
+            f = Cube_f + jj * len(Cube_v)
+            for i in range(v.shape[0]):
+                obj_fid.write('v %f %f %f\n' % (v[i, 0], v[i, 1], v[i, 2]))
+            obj_fid.write('g part_%s\n' % part_sems[jj].replace('/', '-'))
+            obj_fid.write('usemtl m_%s\n' % part_sems[jj].replace('/', '-'))
+            for i in range(f.shape[0]):
+                obj_fid.write('f %d %d %d\n' % (f[i, 0], f[i, 1], f[i, 2]))
     obj_fid.close()
     os.system('cp '+ '%s' % mtl_file +' %s' % os.path.join(filepath, 'color.mtl') + '\n')
 
