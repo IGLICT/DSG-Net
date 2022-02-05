@@ -466,7 +466,7 @@ class PartGraphShapesDataset(data.Dataset):
         unique_id = []
         good_id = []
         with open('./good_list.txt', 'r') as f:
-            good_id = [item.rstrip().split('--')[1] for item in f.readlines()]
+            good_id = [item.rstrip() for item in f.readlines()]
         for item in tqdm(self.object_names, desc="Load Data..."):
             # print(item)
             partnet_id = item
