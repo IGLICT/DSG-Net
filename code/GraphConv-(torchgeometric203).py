@@ -160,7 +160,7 @@ class GCNConv(MessagePassing):
     def forward(self, x: Tensor,
                 edge_weight: OptTensor = None) -> Tensor:
         """"""
-        x = torch.ones_like(x, device = x.device)
+        # x = torch.ones_like(x, device = x.device)
         if self.normalize:
             if isinstance(self.edge_index, Tensor):
                 cache = self._cached_edge_index
