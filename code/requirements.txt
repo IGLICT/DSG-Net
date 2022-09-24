@@ -5,7 +5,7 @@ jupyter-core==4.6.1
 kornia==0.1.2+1782eb3
 matplotlib==3.1.1
 ninja==1.10.0.post1
-numpy==1.17.3
+numpy==1.22.0
 openmesh==1.1.3
 plyfile==0.7.1
 progressbar==2.5
